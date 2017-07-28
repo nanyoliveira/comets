@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		697B415F1F2A044F007DFF61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B415E1F2A044F007DFF61 /* AppDelegate.swift */; };
-		697B41611F2A044F007DFF61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B41601F2A044F007DFF61 /* ViewController.swift */; };
 		697B41641F2A044F007DFF61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697B41621F2A044F007DFF61 /* Main.storyboard */; };
 		697B41671F2A044F007DFF61 /* comets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 697B41651F2A044F007DFF61 /* comets.xcdatamodeld */; };
 		697B41691F2A044F007DFF61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 697B41681F2A044F007DFF61 /* Assets.xcassets */; };
 		697B416C1F2A044F007DFF61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697B416A1F2A044F007DFF61 /* LaunchScreen.storyboard */; };
 		697B41771F2A044F007DFF61 /* cometsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B41761F2A044F007DFF61 /* cometsTests.swift */; };
 		697B41821F2A044F007DFF61 /* cometsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B41811F2A044F007DFF61 /* cometsUITests.swift */; };
+		697B41931F2A0C26007DFF61 /* CometTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B41921F2A0C26007DFF61 /* CometTest.swift */; };
+		697B41961F2B2B8F007DFF61 /* ListOfComets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B41951F2B2B8F007DFF61 /* ListOfComets.swift */; };
+		697B41981F2B2BA6007DFF61 /* Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B41971F2B2BA6007DFF61 /* Comet.swift */; };
+		697B419A1F2B2BD1007DFF61 /* CometTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B41991F2B2BD1007DFF61 /* CometTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		697B415B1F2A044F007DFF61 /* comets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = comets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697B415E1F2A044F007DFF61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		697B41601F2A044F007DFF61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		697B41631F2A044F007DFF61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		697B41661F2A044F007DFF61 /* comets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = comets.xcdatamodel; sourceTree = "<group>"; };
 		697B41681F2A044F007DFF61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		697B417D1F2A044F007DFF61 /* cometsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cometsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		697B41811F2A044F007DFF61 /* cometsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cometsUITests.swift; sourceTree = "<group>"; };
 		697B41831F2A044F007DFF61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		697B41921F2A0C26007DFF61 /* CometTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometTest.swift; sourceTree = "<group>"; };
+		697B41951F2B2B8F007DFF61 /* ListOfComets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOfComets.swift; path = view/ListOfComets.swift; sourceTree = "<group>"; };
+		697B41971F2B2BA6007DFF61 /* Comet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comet.swift; path = view/Comet.swift; sourceTree = "<group>"; };
+		697B41991F2B2BD1007DFF61 /* CometTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CometTableViewCell.swift; path = view/CometTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,9 @@
 		697B415D1F2A044F007DFF61 /* comets */ = {
 			isa = PBXGroup;
 			children = (
+				697B41941F2B2B42007DFF61 /* view */,
+				697B418F1F2A0BD1007DFF61 /* model */,
 				697B415E1F2A044F007DFF61 /* AppDelegate.swift */,
-				697B41601F2A044F007DFF61 /* ViewController.swift */,
 				697B41621F2A044F007DFF61 /* Main.storyboard */,
 				697B41681F2A044F007DFF61 /* Assets.xcassets */,
 				697B416A1F2A044F007DFF61 /* LaunchScreen.storyboard */,
@@ -115,6 +122,7 @@
 			children = (
 				697B41761F2A044F007DFF61 /* cometsTests.swift */,
 				697B41781F2A044F007DFF61 /* Info.plist */,
+				697B41921F2A0C26007DFF61 /* CometTest.swift */,
 			);
 			path = cometsTests;
 			sourceTree = "<group>";
@@ -126,6 +134,23 @@
 				697B41831F2A044F007DFF61 /* Info.plist */,
 			);
 			path = cometsUITests;
+			sourceTree = "<group>";
+		};
+		697B418F1F2A0BD1007DFF61 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		697B41941F2B2B42007DFF61 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				697B41951F2B2B8F007DFF61 /* ListOfComets.swift */,
+				697B41971F2B2BA6007DFF61 /* Comet.swift */,
+				697B41991F2B2BD1007DFF61 /* CometTableViewCell.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				697B41611F2A044F007DFF61 /* ViewController.swift in Sources */,
+				697B419A1F2B2BD1007DFF61 /* CometTableViewCell.swift in Sources */,
 				697B415F1F2A044F007DFF61 /* AppDelegate.swift in Sources */,
+				697B41961F2B2B8F007DFF61 /* ListOfComets.swift in Sources */,
 				697B41671F2A044F007DFF61 /* comets.xcdatamodeld in Sources */,
+				697B41981F2B2BA6007DFF61 /* Comet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				697B41931F2A0C26007DFF61 /* CometTest.swift in Sources */,
 				697B41771F2A044F007DFF61 /* cometsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

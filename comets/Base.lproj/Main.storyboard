@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="comets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,148 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrr-tO-UPe">
+                                <rect key="frame" x="16" y="354.5" width="343" height="304.5"/>
+                                <color key="backgroundColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNr-OH-7eG">
+                                <rect key="frame" x="16" y="72" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="it fell around this country" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Val-fs-rrK">
+                                <rect key="frame" x="16" y="101.5" width="343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHz-je-F28">
+                                <rect key="frame" x="16" y="126.5" width="343" height="220"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cHz-je-F28" secondAttribute="height" multiplier="343:220" id="cqB-9k-7Sf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jrr-tO-UPe" firstAttribute="top" secondItem="cHz-je-F28" secondAttribute="bottom" constant="8" symbolic="YES" id="AVd-SG-dSw"/>
+                            <constraint firstItem="cHz-je-F28" firstAttribute="top" secondItem="Val-fs-rrK" secondAttribute="bottom" constant="8" symbolic="YES" id="AeE-yw-9vb"/>
+                            <constraint firstItem="uNr-OH-7eG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="IhO-zX-A9d"/>
+                            <constraint firstItem="Val-fs-rrK" firstAttribute="leading" secondItem="uNr-OH-7eG" secondAttribute="leading" id="KWu-Qa-raM"/>
+                            <constraint firstItem="jrr-tO-UPe" firstAttribute="leading" secondItem="cHz-je-F28" secondAttribute="leading" id="Kcr-pn-81T"/>
+                            <constraint firstItem="cHz-je-F28" firstAttribute="leading" secondItem="Val-fs-rrK" secondAttribute="leading" id="QEs-8j-8JO"/>
+                            <constraint firstItem="cHz-je-F28" firstAttribute="trailing" secondItem="Val-fs-rrK" secondAttribute="trailing" id="RYL-fK-5Ml"/>
+                            <constraint firstItem="Val-fs-rrK" firstAttribute="trailing" secondItem="uNr-OH-7eG" secondAttribute="trailing" id="fRR-Ly-C28"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="uNr-OH-7eG" secondAttribute="leading" id="ibI-Va-C0W"/>
+                            <constraint firstItem="Val-fs-rrK" firstAttribute="top" secondItem="uNr-OH-7eG" secondAttribute="bottom" constant="8" symbolic="YES" id="oYD-d3-NKA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jrr-tO-UPe" secondAttribute="bottom" constant="8" symbolic="YES" id="tMt-6b-5Fb"/>
+                            <constraint firstItem="jrr-tO-UPe" firstAttribute="trailing" secondItem="cHz-je-F28" secondAttribute="trailing" id="zPX-ay-VXv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uNr-OH-7eG" secondAttribute="trailing" id="zl2-aC-IZF"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1845.5999999999999" y="-1395.6521739130435"/>
+        </scene>
+        <!--Comets-->
+        <scene sceneID="83J-Ef-cHA">
+            <objects>
+                <tableViewController id="87c-lc-rJd" customClass="ListOfComets" customModule="comets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="LIH-g3-5F1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Oad-Wg-R7j" customClass="CometTableViewCell" customModule="comets" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oad-Wg-R7j" id="4R6-AW-GyW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bm4-FO-cN2">
+                                            <rect key="frame" x="8" y="16" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <color key="textColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comet mass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRg-cf-qU1">
+                                            <rect key="frame" x="8" y="45" width="278.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="comet year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wp7-ip-BUz">
+                                            <rect key="frame" x="294.5" y="45" width="72.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wp7-ip-BUz" firstAttribute="top" secondItem="LRg-cf-qU1" secondAttribute="top" id="4ov-vL-juk"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Bm4-FO-cN2" secondAttribute="trailing" id="Clc-3n-TJT"/>
+                                        <constraint firstItem="LRg-cf-qU1" firstAttribute="top" secondItem="Bm4-FO-cN2" secondAttribute="bottom" constant="8" id="I6V-4c-Mef"/>
+                                        <constraint firstItem="Bm4-FO-cN2" firstAttribute="top" secondItem="4R6-AW-GyW" secondAttribute="topMargin" constant="8" id="NGf-CI-72z"/>
+                                        <constraint firstItem="LRg-cf-qU1" firstAttribute="leading" secondItem="Bm4-FO-cN2" secondAttribute="leading" id="SdV-wW-msw"/>
+                                        <constraint firstItem="wp7-ip-BUz" firstAttribute="leading" secondItem="LRg-cf-qU1" secondAttribute="trailing" constant="8" symbolic="YES" id="cYb-9G-m6T"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Bm4-FO-cN2" secondAttribute="leading" id="hT5-Lq-zWb"/>
+                                        <constraint firstItem="wp7-ip-BUz" firstAttribute="trailing" secondItem="Bm4-FO-cN2" secondAttribute="trailing" id="ueW-cO-Ch6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.81534658395000004" green="0.099923587696229513" blue="0.39639125935135139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="cometMass" destination="LRg-cf-qU1" id="gdF-rA-nNJ"/>
+                                    <outlet property="cometName" destination="Bm4-FO-cN2" id="teq-F8-s6V"/>
+                                    <outlet property="cometYear" destination="wp7-ip-BUz" id="2er-7G-NZo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="87c-lc-rJd" id="1e1-8X-fmj"/>
+                            <outlet property="delegate" destination="87c-lc-rJd" id="BGJ-LZ-apb"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Comets" id="5Se-KX-pWE"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="details" id="v0u-F9-cXr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R0l-CF-plP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="-2058"/>
+        </scene>
+        <!--Comets-->
+        <scene sceneID="ZHI-mP-uH9">
+            <objects>
+                <navigationController title="Comets" automaticallyAdjustsScrollViewInsets="NO" id="uqP-zh-mag" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="cqz-Zb-YMu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="87c-lc-rJd" kind="relationship" relationship="rootViewController" id="sTG-Jf-gLP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bet-3b-6nF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10.4" y="-1394.7526236881561"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
