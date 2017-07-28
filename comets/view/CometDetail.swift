@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Comet: UIViewController {
+class CometDetail: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
