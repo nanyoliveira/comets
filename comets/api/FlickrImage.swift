@@ -13,17 +13,24 @@ import Alamofire
 protocol FlickrDelegate: class
 {
     func receiveImage(dictionary:Dictionary<String, Any>)
+    func noImageAvailable()
+    func noInternet()
 }
 
 
 
 class FlickrImage {
     
-    var delegate:FlickrDelegate?
+    weak var delegate:FlickrDelegate?
     
     
     
     func researchRandonImage(countryToSearch:String) {
+        
+        guard ConnectionManager.sharedInstance.hasConnection() else {
+            delegate?.noInternet()
+            return
+        }
         
         let tag = countryToSearch.replacingOccurrences(of: " ", with: "")
         let flickrConst = flickrConstant()
@@ -33,8 +40,6 @@ class FlickrImage {
             
             if(response.result.isSuccess)
             {
-                
-                
                 if let responseValue = response.result.value as? Dictionary<String, Any>
                 {
                     if let items = responseValue[flickrConstant.flickrItems] as? Array<Any>
@@ -42,10 +47,12 @@ class FlickrImage {
                         if let firstValue = items[items.getTotalRandom()] as? Dictionary<String, Any>
                         {
                             self.delegate?.receiveImage(dictionary:firstValue)
-                            
                         }
                     }
                 }
+            }
+            else {
+                self.delegate?.noImageAvailable()
             }
         }
     }
@@ -58,7 +65,6 @@ extension Array
     func getTotalRandom() -> Int {
         let total = UInt32(self.count)
         let random = Int(arc4random_uniform(total))
-        
         return random
     }
 }

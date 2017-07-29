@@ -11,11 +11,11 @@ import XCTest
 
 class SyncTest: XCTestCase {
 
-    var sync:Syncronize?
+    var sync:ManageSynchronization?
     
     override func setUp() {
         super.setUp()
-        sync = Syncronize()
+        sync = ManageSynchronization()
     }
     
     

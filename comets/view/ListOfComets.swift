@@ -28,6 +28,12 @@ class ListOfComets: UITableViewController {
         
         self.loadingMessage.text = "Wait, the comets are falling..."
         
+        
+         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: CometManagerConstant.dataReady), object: nil, queue: nil, using: self.receive)
+        
+        
+        ConnectionManager.sharedInstance.display = self.loadingMessage
+        
         let sync = ManageSynchronization();
         sync.delegate = cometManager
         sync.checkData()
@@ -35,7 +41,7 @@ class ListOfComets: UITableViewController {
         
         self.clearsSelectionOnViewWillAppear = false
         
-        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: CometManagerConstant.dataReady), object: nil, queue: nil, using: self.receive)
+       
     }
 
     override func didReceiveMemoryWarning() {

@@ -50,8 +50,6 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
         {
             self.chuckNorisPopulate()
         }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,7 +68,6 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
         let flickr = FlickrImage()
         flickr.delegate = self
         flickr.researchRandonImage(countryToSearch: cometCountry!)
-        
     }
     
     
@@ -109,9 +106,16 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
                 let imageURL = URL(string: imageURLString)
         
                 countryImage.kf.setImage(with: imageURL)
-                
             }
         }
+    }
+    
+    func noImageAvailable() {
+        
+    }
+    
+    func noInternet() {
+        countryName.text = "it fell around the planet Earth"
     }
     
 }

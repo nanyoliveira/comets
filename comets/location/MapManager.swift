@@ -55,7 +55,11 @@ class MapManager {
         
         dropPin()
         
-        findCountry()
+        
+        if ConnectionManager.sharedInstance.hasConnection()
+        {
+            findCountry()
+        }
     }
     
     

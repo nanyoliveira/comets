@@ -20,8 +20,7 @@ protocol SynchronizeDelegate: class
 class ManageSynchronization {
     
     
-    var delegate:SynchronizeDelegate?
-    
+    weak var delegate:SynchronizeDelegate?
     
     private let defaults = UserDefaults.standard
     
@@ -51,20 +50,21 @@ class ManageSynchronization {
         }
     }
     
-    
-    
     func call()
     {
+        guard ConnectionManager.sharedInstance.hasConnection() else {
+            ConnectionManager.sharedInstance.updateDisplayOffline()
+            setBeenOpenBeforeFalse()
+            return
+        }
+        
         Alamofire.request(SyncConstants.serverURL).responseJSON { response in
             
             if(response.result.isSuccess)
             {
-                
                 let jAnswer: JsonAnswer = JsonAnswer(result: response.result.value)
-                
                 self.delegate?.receive(jsonanswer: jAnswer)
             }
-            
         }
     }
     
