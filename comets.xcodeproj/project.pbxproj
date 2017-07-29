@@ -12,7 +12,6 @@
 		59287D2DD77E5E73843009D6 /* Pods_cometsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D9A09F1B5A24B4F80BE32F /* Pods_cometsTests.framework */; };
 		697B415F1F2A044F007DFF61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B415E1F2A044F007DFF61 /* AppDelegate.swift */; };
 		697B41641F2A044F007DFF61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697B41621F2A044F007DFF61 /* Main.storyboard */; };
-		697B41671F2A044F007DFF61 /* comets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 697B41651F2A044F007DFF61 /* comets.xcdatamodeld */; };
 		697B41691F2A044F007DFF61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 697B41681F2A044F007DFF61 /* Assets.xcassets */; };
 		697B416C1F2A044F007DFF61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697B416A1F2A044F007DFF61 /* LaunchScreen.storyboard */; };
 		697B41821F2A044F007DFF61 /* cometsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B41811F2A044F007DFF61 /* cometsUITests.swift */; };
@@ -26,6 +25,7 @@
 		69A2B8BF1F2B7C73005C4B39 /* Syncronize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8BE1F2B7C73005C4B39 /* Syncronize.swift */; };
 		69A2B8C11F2B942F005C4B39 /* CometManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8C01F2B942F005C4B39 /* CometManager.swift */; };
 		69A2B8C31F2B9A8F005C4B39 /* CometManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8C21F2B9A8F005C4B39 /* CometManagerTest.swift */; };
+		69FDDDEB1F2CCAB90016BE88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69FDDDEA1F2CCAB90016BE88 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,6 @@
 		697B415B1F2A044F007DFF61 /* comets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = comets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697B415E1F2A044F007DFF61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		697B41631F2A044F007DFF61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		697B41661F2A044F007DFF61 /* comets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = comets.xcdatamodel; sourceTree = "<group>"; };
 		697B41681F2A044F007DFF61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		697B416B1F2A044F007DFF61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		697B416D1F2A044F007DFF61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		69A2B8BE1F2B7C73005C4B39 /* Syncronize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Syncronize.swift; path = api/Syncronize.swift; sourceTree = "<group>"; };
 		69A2B8C01F2B942F005C4B39 /* CometManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CometManager.swift; path = model/CometManager.swift; sourceTree = "<group>"; };
 		69A2B8C21F2B9A8F005C4B39 /* CometManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometManagerTest.swift; sourceTree = "<group>"; };
+		69FDDDEA1F2CCAB90016BE88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7E3543EE7A7330291C909031 /* Pods-cometsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cometsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cometsUITests/Pods-cometsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3C75741C6E86C4BDAEAF71E /* Pods-cometsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cometsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cometsTests/Pods-cometsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC0571C46C566A9F4F60E0A2 /* Pods-cometsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cometsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cometsTests/Pods-cometsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69FDDDEB1F2CCAB90016BE88 /* MapKit.framework in Frameworks */,
 				3551C9DFF52B0CD9566C8E8A /* Pods_comets.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +111,7 @@
 		39D6D5F8BC4D6CB16ADCA4F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69FDDDEA1F2CCAB90016BE88 /* MapKit.framework */,
 				F3904C930790661905D3E37E /* Pods_comets.framework */,
 				06D9A09F1B5A24B4F80BE32F /* Pods_cometsTests.framework */,
 				E6416F6ABC5443AA68B0DD75 /* Pods_cometsUITests.framework */,
@@ -150,7 +152,6 @@
 				697B41681F2A044F007DFF61 /* Assets.xcassets */,
 				697B416A1F2A044F007DFF61 /* LaunchScreen.storyboard */,
 				697B416D1F2A044F007DFF61 /* Info.plist */,
-				697B41651F2A044F007DFF61 /* comets.xcdatamodeld */,
 			);
 			path = comets;
 			sourceTree = "<group>";
@@ -297,6 +298,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
@@ -510,7 +514,6 @@
 				697B415F1F2A044F007DFF61 /* AppDelegate.swift in Sources */,
 				697B41961F2B2B8F007DFF61 /* ListOfComets.swift in Sources */,
 				69A2B8BF1F2B7C73005C4B39 /* Syncronize.swift in Sources */,
-				697B41671F2A044F007DFF61 /* comets.xcdatamodeld in Sources */,
 				69A2B8BC1F2B7983005C4B39 /* JsonAnswer.swift in Sources */,
 				69A2B8B41F2B6B12005C4B39 /* Comet.swift in Sources */,
 				697B41981F2B2BA6007DFF61 /* CometDetail.swift in Sources */,
@@ -795,19 +798,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		697B41651F2A044F007DFF61 /* comets.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				697B41661F2A044F007DFF61 /* comets.xcdatamodel */,
-			);
-			currentVersion = 697B41661F2A044F007DFF61 /* comets.xcdatamodel */;
-			path = comets.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 697B41531F2A044F007DFF61 /* Project object */;
 }

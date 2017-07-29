@@ -27,6 +27,7 @@ class Syncronize {
             
             if(response.result.isSuccess)
             {
+                
                 let jAnswer: JsonAnswer = JsonAnswer(result: response.result.value)
                 
                 self.delegate?.receive(jsonanswer: jAnswer)

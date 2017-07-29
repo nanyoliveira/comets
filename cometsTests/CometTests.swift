@@ -38,7 +38,7 @@ class CometTests: XCTestCase {
         let comet = Comet().createFrom(dic: dic)
         
         XCTAssertEqual(comet!.name, "Aachen")
-        XCTAssertEqual(comet!.mass, "21")
+        XCTAssertEqual(comet!.mass, 21)
         XCTAssertEqual(comet!.lat, "6.08333")
         XCTAssertEqual(comet!.lon, "50.775")
         XCTAssertFalse(comet!.isValidComet(byDate: Date.returnDateFromString(dateString: "1801-01-01T00:00:00.000")), "not valid")

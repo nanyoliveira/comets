@@ -10,21 +10,19 @@ import UIKit
 
 class CometTableViewCell: UITableViewCell {
 
+   
     @IBOutlet weak var cometName: UILabel!
+    
     @IBOutlet weak var cometMass: UILabel!
+    
     @IBOutlet weak var cometYear: UILabel!
     
+
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func setData (comet:Comet) {
+        cometName.text = comet.name
+        cometMass.text = " \(comet.mass)"
+        cometYear.text = " \(comet.cyear)"
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

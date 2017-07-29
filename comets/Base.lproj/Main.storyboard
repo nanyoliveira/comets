@@ -24,23 +24,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrr-tO-UPe">
-                                <rect key="frame" x="16" y="354.5" width="343" height="304.5"/>
+                                <rect key="frame" x="16" y="337.5" width="343" height="321.5"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S1d-gw-5gP">
+                                        <rect key="frame" x="20" y="20" width="303" height="281.5"/>
+                                    </mapView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="S1d-gw-5gP" firstAttribute="top" secondItem="jrr-tO-UPe" secondAttribute="top" constant="20" symbolic="YES" id="F5Z-8G-mC5"/>
+                                    <constraint firstAttribute="trailing" secondItem="S1d-gw-5gP" secondAttribute="trailing" constant="20" symbolic="YES" id="RcS-Se-cZB"/>
+                                    <constraint firstAttribute="bottom" secondItem="S1d-gw-5gP" secondAttribute="bottom" constant="20" symbolic="YES" id="vYA-KE-jvz"/>
+                                    <constraint firstItem="S1d-gw-5gP" firstAttribute="leading" secondItem="jrr-tO-UPe" secondAttribute="leading" constant="20" symbolic="YES" id="ylu-Oj-gqe"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNr-OH-7eG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wait a moment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNr-OH-7eG">
                                 <rect key="frame" x="16" y="72" width="343" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <color key="textColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="it fell around this country" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Val-fs-rrK">
-                                <rect key="frame" x="16" y="101.5" width="343" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Val-fs-rrK">
+                                <rect key="frame" x="16" y="101.5" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHz-je-F28">
-                                <rect key="frame" x="16" y="126.5" width="343" height="220"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHz-je-F28">
+                                <rect key="frame" x="16" y="109.5" width="343" height="220"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cHz-je-F28" secondAttribute="height" multiplier="343:220" id="cqB-9k-7Sf"/>
@@ -64,6 +75,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="uNr-OH-7eG" secondAttribute="trailing" id="zl2-aC-IZF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cometName" destination="uNr-OH-7eG" id="JWl-ER-YzO"/>
+                        <outlet property="countryImage" destination="cHz-je-F28" id="I0v-Wq-ScQ"/>
+                        <outlet property="countryName" destination="Val-fs-rrK" id="lKq-zN-f4Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +89,7 @@
         <scene sceneID="83J-Ef-cHA">
             <objects>
                 <tableViewController id="87c-lc-rJd" customClass="ListOfComets" customModule="comets" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="LIH-g3-5F1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="LIH-g3-5F1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,7 +97,7 @@
                         <color key="separatorColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Oad-Wg-R7j" customClass="CometTableViewCell" customModule="comets" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="Cell" id="Oad-Wg-R7j" customClass="CometTableViewCell" customModule="comets" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oad-Wg-R7j" id="4R6-AW-GyW">
@@ -91,20 +107,20 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bm4-FO-cN2">
                                             <rect key="frame" x="8" y="16" width="359" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                            <color key="textColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="textColor" red="0.81568627450980391" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comet mass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRg-cf-qU1">
                                             <rect key="frame" x="8" y="45" width="278.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="comet year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wp7-ip-BUz">
                                             <rect key="frame" x="294.5" y="45" width="72.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="highlightedColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -121,9 +137,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.81534658395000004" green="0.099923587696229513" blue="0.39639125935135139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="cometMass" destination="LRg-cf-qU1" id="gdF-rA-nNJ"/>
-                                    <outlet property="cometName" destination="Bm4-FO-cN2" id="teq-F8-s6V"/>
-                                    <outlet property="cometYear" destination="wp7-ip-BUz" id="2er-7G-NZo"/>
+                                    <outlet property="cometMass" destination="LRg-cf-qU1" id="P5S-J6-eYj"/>
+                                    <outlet property="cometName" destination="Bm4-FO-cN2" id="ZWL-wS-CZb"/>
+                                    <outlet property="cometYear" destination="wp7-ip-BUz" id="Tgy-fP-IBZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -148,12 +164,16 @@
             <objects>
                 <navigationController title="Comets" automaticallyAdjustsScrollViewInsets="NO" id="uqP-zh-mag" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="cqz-Zb-YMu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="cqz-Zb-YMu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

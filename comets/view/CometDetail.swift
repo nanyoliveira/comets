@@ -10,26 +10,49 @@ import UIKit
 
 class CometDetail: UIViewController {
 
+    var comet:Comet?
+    
+    
+    @IBOutlet weak var cometName: UILabel!
+    @IBOutlet weak var countryName: UILabel!
+    @IBOutlet weak var countryImage: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if comet != nil {
+             self.populateView()
+        }
+        else
+        {
+            self.chuckNorisPopulate()
+        }
+        
+       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    private func populateView()
+    {
+        cometName.text = comet?.name
+        countryName.text = "it fell around this country"
+        
+        
+    }
+    
+    
+    private func chuckNorisPopulate() {
+        cometName.text = "Uh Oh!"
+        countryName.text = "Chuck Norris kicked this comet away!"
+        countryImage.image = UIImage(named: "chuckNorris")
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

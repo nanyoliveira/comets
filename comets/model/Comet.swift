@@ -12,35 +12,11 @@ import RealmSwift
 class Comet:Object {
     
     dynamic var name = ""
-    dynamic var mass = ""
+    dynamic var mass = 0.0
     dynamic var lon = ""
     dynamic var lat = ""
     dynamic var id = ""
-    
-    
-    /*
-    let dic = ["geolocation":
-        [
-            "coordinates":[
-                "6.08333",
-                "50.775"
-            ],
-            "type" : "Point",
-        ],
-               
-               "name": "Aachen",
-               "reclat": "50.775000",
-               "id": "1",
-               "reclong": "6.083330",
-               "year": "1880-01-01T00:00:00.000",
-               "fall": "Fell",
-               "nametype": "Valid",
-               "mass": "21", "recclass": "L5"
-        ] as [String : Any];
-    
-    
-    */
-    
+    dynamic var cyear = 0
     
     func createFrom(dic: Dictionary<String, Any> ) -> Comet?
     {
@@ -69,25 +45,34 @@ class Comet:Object {
         {
             self.name = dicName
         }
-        
+
+       
         if let dicMass = validData["mass"] as? String
         {
-            self.mass = dicMass
+            let massString:String =  String(dicMass)
+            if let massInt = Double(massString)
+            {
+                self.mass = massInt
+            }
         }
-        
         
         if let geo = validData["geolocation"] as? Dictionary<String, Any>
         {
             
-            if let coordinate = geo["coordinates"] as? Array<String>
+            if let coordinate = geo["coordinates"] as? Array<Any>
             {
                 
-                self.lat = coordinate[0]
-                self.lon = coordinate[1]
+                self.lat = "\(coordinate[0])"
+                self.lon = "\(coordinate[1])"
             }
             
         }
         
+        if let dicYear = validData["year"] as? String
+        {
+            let yearDate = Date.returnDateFromString(dateString: dicYear)
+            self.cyear = Date.getYearFrom(date: yearDate)
+        }
     }
     
     
@@ -111,6 +96,15 @@ extension Date
         dateStringFormatter.locale = Locale(identifier: "en_US_POSIX")
         let d = dateStringFormatter.date(from: dateString)!
         return d
+    }
+    
+    
+    static func getYearFrom(date:Date) -> Int {
+        
+        let calendar = Calendar.current
+        
+        let year = calendar.component(.year, from: date)
+        return year;
     }
     
 }

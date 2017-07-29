@@ -11,9 +11,14 @@ import RealmSwift
 
 class CometManager: SyncronizeDelegate {
     
-    internal var data:Array<Dictionary<String, Any>>?
-    private var realm:Realm?
+    private var data:Array<Dictionary<String, Any>>?
+    private var realm:Realm
     
+    
+    init() {
+         realm = try! Realm()
+    }
+   
     
     //Adding Data
     func receive(jsonanswer: JsonAnswer) {
@@ -21,7 +26,6 @@ class CometManager: SyncronizeDelegate {
         if let receivedData = jsonanswer.result as? Array<Dictionary<String, Any>>
         {
             self.data = receivedData
-            realm  = try! Realm()
             convertData()
         }
     }
@@ -49,16 +53,16 @@ class CometManager: SyncronizeDelegate {
     
     private func addOnRealm(comet:Object)
     {
-        realm?.beginWrite()
-        realm?.add(comet)
-        try! realm?.commitWrite()
+        realm.beginWrite()
+        realm.add(comet)
+        try! realm.commitWrite()
     }
     
     
     private func idExists(id:String) -> Bool
     {
-        let idResult = realm?.objects(Comet.self).filter(NSPredicate(format: "id contains '\(id)'"))
-        if idResult != nil && idResult!.count > 0
+        let idResult = realm.objects(Comet.self).filter(NSPredicate(format: "id contains '\(id)'"))
+        if idResult != nil && idResult.count > 0
         {
             return true
         }
@@ -70,6 +74,19 @@ class CometManager: SyncronizeDelegate {
     
     
     //Managing data
+    
+    func getData() -> Results<Comet>? {
+        
+        let validComets = realm.objects(Comet.self).sorted(byKeyPath: "mass")
+        if validComets.count > 0
+        {
+            print(">>> \(validComets)")
+           return validComets
+        }
+        
+        return nil
+    }
+    
     
     
     
