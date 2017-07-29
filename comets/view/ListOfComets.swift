@@ -45,7 +45,7 @@ class ListOfComets: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data?.count ?? 0
@@ -82,7 +82,7 @@ class ListOfComets: UITableViewController {
                 
                 if let selectedIndex = tableView.indexPathForSelectedRow
                 {
-//                     cometDetails.comet = self.data![selectedIndex.row]
+                     cometDetails.comet = self.data![selectedIndex.row]
                 }
                 
                

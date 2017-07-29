@@ -26,6 +26,8 @@
 		69A2B8C11F2B942F005C4B39 /* CometManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8C01F2B942F005C4B39 /* CometManager.swift */; };
 		69A2B8C31F2B9A8F005C4B39 /* CometManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8C21F2B9A8F005C4B39 /* CometManagerTest.swift */; };
 		69FDDDEB1F2CCAB90016BE88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69FDDDEA1F2CCAB90016BE88 /* MapKit.framework */; };
+		69FDDDEE1F2CCDEB0016BE88 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDDDED1F2CCDEB0016BE88 /* MapManager.swift */; };
+		69FDDDF01F2CF2140016BE88 /* FlickrImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDDDEF1F2CF2140016BE88 /* FlickrImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		69A2B8C01F2B942F005C4B39 /* CometManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CometManager.swift; path = model/CometManager.swift; sourceTree = "<group>"; };
 		69A2B8C21F2B9A8F005C4B39 /* CometManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometManagerTest.swift; sourceTree = "<group>"; };
 		69FDDDEA1F2CCAB90016BE88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		69FDDDED1F2CCDEB0016BE88 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapManager.swift; path = location/MapManager.swift; sourceTree = "<group>"; };
+		69FDDDEF1F2CF2140016BE88 /* FlickrImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrImage.swift; path = api/FlickrImage.swift; sourceTree = "<group>"; };
 		7E3543EE7A7330291C909031 /* Pods-cometsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cometsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cometsUITests/Pods-cometsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3C75741C6E86C4BDAEAF71E /* Pods-cometsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cometsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cometsTests/Pods-cometsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC0571C46C566A9F4F60E0A2 /* Pods-cometsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cometsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cometsTests/Pods-cometsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		697B415D1F2A044F007DFF61 /* comets */ = {
 			isa = PBXGroup;
 			children = (
+				69FDDDEC1F2CCDC90016BE88 /* location */,
 				69A2B8BD1F2B7C54005C4B39 /* api */,
 				697B41941F2B2B42007DFF61 /* view */,
 				697B418F1F2A0BD1007DFF61 /* model */,
@@ -200,8 +205,17 @@
 			isa = PBXGroup;
 			children = (
 				69A2B8BE1F2B7C73005C4B39 /* Syncronize.swift */,
+				69FDDDEF1F2CF2140016BE88 /* FlickrImage.swift */,
 			);
 			name = api;
+			sourceTree = "<group>";
+		};
+		69FDDDEC1F2CCDC90016BE88 /* location */ = {
+			isa = PBXGroup;
+			children = (
+				69FDDDED1F2CCDEB0016BE88 /* MapManager.swift */,
+			);
+			name = location;
 			sourceTree = "<group>";
 		};
 		A25B5A0AE22E388C0090AD28 /* Pods */ = {
@@ -509,10 +523,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69FDDDF01F2CF2140016BE88 /* FlickrImage.swift in Sources */,
 				697B419A1F2B2BD1007DFF61 /* CometTableViewCell.swift in Sources */,
 				69A2B8C11F2B942F005C4B39 /* CometManager.swift in Sources */,
 				697B415F1F2A044F007DFF61 /* AppDelegate.swift in Sources */,
 				697B41961F2B2B8F007DFF61 /* ListOfComets.swift in Sources */,
+				69FDDDEE1F2CCDEB0016BE88 /* MapManager.swift in Sources */,
 				69A2B8BF1F2B7C73005C4B39 /* Syncronize.swift in Sources */,
 				69A2B8BC1F2B7983005C4B39 /* JsonAnswer.swift in Sources */,
 				69A2B8B41F2B6B12005C4B39 /* Comet.swift in Sources */,

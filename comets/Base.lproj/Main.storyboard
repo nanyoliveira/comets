@@ -50,7 +50,7 @@
                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHz-je-F28">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="comet" translatesAutoresizingMaskIntoConstraints="NO" id="cHz-je-F28">
                                 <rect key="frame" x="16" y="109.5" width="343" height="220"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -79,6 +79,7 @@
                         <outlet property="cometName" destination="uNr-OH-7eG" id="JWl-ER-YzO"/>
                         <outlet property="countryImage" destination="cHz-je-F28" id="I0v-Wq-ScQ"/>
                         <outlet property="countryName" destination="Val-fs-rrK" id="lKq-zN-f4Q"/>
+                        <outlet property="map" destination="S1d-gw-5gP" id="Ye1-4W-Wvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -164,7 +165,7 @@
             <objects>
                 <navigationController title="Comets" automaticallyAdjustsScrollViewInsets="NO" id="uqP-zh-mag" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="cqz-Zb-YMu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="cqz-Zb-YMu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -185,5 +186,8 @@
             <point key="canvasLocation" x="-10.4" y="-1394.7526236881561"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="comet" width="550" height="399"/>
+    </resources>
     <color key="tintColor" red="0.81534658400000004" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

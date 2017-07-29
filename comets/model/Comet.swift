@@ -18,6 +18,8 @@ class Comet:Object {
     dynamic var id = ""
     dynamic var cyear = 0
     
+    
+    
     func createFrom(dic: Dictionary<String, Any> ) -> Comet?
     {
         if let year = dic["year"] as? String
@@ -62,8 +64,8 @@ class Comet:Object {
             if let coordinate = geo["coordinates"] as? Array<Any>
             {
                 
-                self.lat = "\(coordinate[0])"
-                self.lon = "\(coordinate[1])"
+                self.lat = "\(coordinate[1])"
+                self.lon = "\(coordinate[0])"
             }
             
         }

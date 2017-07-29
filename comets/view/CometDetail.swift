@@ -7,32 +7,53 @@
 //
 
 import UIKit
+import MapKit
+import Kingfisher
 
-class CometDetail: UIViewController {
 
-    var comet:Comet?
+class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
+    
     
     
     @IBOutlet weak var cometName: UILabel!
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var countryImage: UIImageView!
+    @IBOutlet weak var map: MKMapView!
+    
+    
+    
+    var comet:Comet?
+    
+    var cometCountry:String?
+    {
+        didSet{
+            countryName.text = "it fell around \(cometCountry ?? "" )"
+            setCountryImage()
+        }
+    }
+    
+    
+    let mapM = MapManager()
     
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        mapM.delegate = self
+        
         if comet != nil {
-             self.populateView()
+            self.populateView()
         }
         else
         {
             self.chuckNorisPopulate()
         }
         
-       
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -40,9 +61,15 @@ class CometDetail: UIViewController {
     
     private func populateView()
     {
-        cometName.text = comet?.name
-        countryName.text = "it fell around this country"
-        
+        mapM.setCometLocation()
+        cometName.text = comet!.name
+    }
+    
+    private func setCountryImage()
+    {
+        let flickr = FlickrImage()
+        flickr.delegate = self
+        flickr.researchRandonImage(countryToSearch: cometCountry!)
         
     }
     
@@ -53,6 +80,38 @@ class CometDetail: UIViewController {
         countryImage.image = UIImage(named: "chuckNorris")
     }
     
-
-
+    
+    // delegates
+    func getCometLocation() -> (lat:String, lon:String)
+    {
+        var latitude = "0.0"
+        var longitude = "0.0"
+        
+        if let lat = comet?.lat{
+            latitude = lat
+        }
+        
+        if let lon = comet?.lon{
+            longitude = lon
+        }
+        
+        return (latitude, longitude)
+    }
+    
+    
+    func receiveImage(dictionary:Dictionary<String, Any>)
+    {
+        if let media = dictionary["media"] as? Dictionary<String, Any>
+        {
+            if let imageURLString = media["m"] as? String
+            {
+                
+                let imageURL = URL(string: imageURLString)
+        
+                countryImage.kf.setImage(with: imageURL)
+                
+            }
+        }
+    }
+    
 }

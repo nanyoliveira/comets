@@ -11,7 +11,7 @@ import Alamofire
 
 protocol SyncronizeDelegate: class
 {
-    func receive(jsonanswer:JsonAnswer);
+    func receive(jsonanswer:JsonAnswer)
 }
 
 
