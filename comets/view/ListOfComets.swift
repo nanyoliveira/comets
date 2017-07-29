@@ -15,21 +15,27 @@ class ListOfComets: UITableViewController {
     private var data:Results<Comet>? {
         didSet
         {
-            
             tableView.reloadData()
         }
     }
     
+   
+    
+    @IBOutlet weak var loadingMessage: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let sinc = Syncronize();
-        sinc.delegate = cometManager
-        sinc.call()
+        
+        self.loadingMessage.text = "Wait, the comets are falling..."
+        
+        let sync = ManageSynchronization();
+        sync.delegate = cometManager
+        sync.checkData()
         
         
         self.clearsSelectionOnViewWillAppear = false
         
-         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: ThreadNotifications.dataReady), object: nil, queue: nil, using: self.receive)
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: CometManagerConstant.dataReady), object: nil, queue: nil, using: self.receive)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,10 +43,13 @@ class ListOfComets: UITableViewController {
         
     }
     
+    
     private func receive(notification:Notification)
     {
-        if notification.name == Notification.Name(rawValue:ThreadNotifications.dataReady)
+        if notification.name == Notification.Name(rawValue:CometManagerConstant.dataReady)
         {
+            self.loadingMessage.text = ""
+            self.loadingMessage.alpha = 0.87
             self.data = cometManager.getData()
         }
     }

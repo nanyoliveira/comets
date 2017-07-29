@@ -97,9 +97,17 @@
                         <color key="tintColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vug-na-QIU">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.81568627449999997" green="0.099923587699999997" blue="0.39639125939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="Cell" id="Oad-Wg-R7j" customClass="CometTableViewCell" customModule="comets" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oad-Wg-R7j" id="4R6-AW-GyW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -153,6 +161,7 @@
                     <navigationItem key="navigationItem" title="Comets" id="5Se-KX-pWE"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="loadingMessage" destination="Vug-na-QIU" id="8h8-Z8-I7O"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="details" id="v0u-F9-cXr"/>
                     </connections>
                 </tableViewController>

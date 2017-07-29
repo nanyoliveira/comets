@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class CometManager: SyncronizeDelegate {
+class CometManager: SynchronizeDelegate {
     
     private var data:Array<Dictionary<String, Any>>?
     private var realm:Realm
@@ -45,7 +45,7 @@ class CometManager: SyncronizeDelegate {
             }
         }
         
-        let notification = Notification(name: Notification.Name(rawValue: ThreadNotifications.dataReady))
+        let notification = Notification(name: Notification.Name(rawValue: CometManagerConstant.dataReady))
         NotificationCenter.default.post(notification)
         
     }
@@ -73,6 +73,14 @@ class CometManager: SyncronizeDelegate {
     
     
     
+    func dataSet()
+    {
+        let notification = Notification(name: Notification.Name(rawValue: CometManagerConstant.dataReady))
+
+        NotificationCenter.default.post(notification)
+    }
+    
+    
     //Managing data
     
     func getData() -> Results<Comet>? {
@@ -80,7 +88,6 @@ class CometManager: SyncronizeDelegate {
         let validComets = realm.objects(Comet.self).sorted(byKeyPath: "mass")
         if validComets.count > 0
         {
-            print(">>> \(validComets)")
            return validComets
         }
         
@@ -93,7 +100,7 @@ class CometManager: SyncronizeDelegate {
 }
 
 
-struct ThreadNotifications {
+struct CometManagerConstant {
     static let dataReady = "DataReady"
 }
 

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        let sync = Syncronize();
+        let sync = ManageSynchronization();
         let cmanager = CometManager()
         sync.delegate = cmanager
         sync.call()

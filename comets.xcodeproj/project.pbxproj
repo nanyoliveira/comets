@@ -22,7 +22,7 @@
 		69A2B8B61F2B6CA8005C4B39 /* CometTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8B51F2B6CA8005C4B39 /* CometTests.swift */; };
 		69A2B8B81F2B707C005C4B39 /* SyncTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8B71F2B707C005C4B39 /* SyncTest.swift */; };
 		69A2B8BC1F2B7983005C4B39 /* JsonAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8BB1F2B7983005C4B39 /* JsonAnswer.swift */; };
-		69A2B8BF1F2B7C73005C4B39 /* Syncronize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8BE1F2B7C73005C4B39 /* Syncronize.swift */; };
+		69A2B8BF1F2B7C73005C4B39 /* ManageSynchronization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8BE1F2B7C73005C4B39 /* ManageSynchronization.swift */; };
 		69A2B8C11F2B942F005C4B39 /* CometManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8C01F2B942F005C4B39 /* CometManager.swift */; };
 		69A2B8C31F2B9A8F005C4B39 /* CometManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B8C21F2B9A8F005C4B39 /* CometManagerTest.swift */; };
 		69FDDDEB1F2CCAB90016BE88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69FDDDEA1F2CCAB90016BE88 /* MapKit.framework */; };
@@ -68,7 +68,7 @@
 		69A2B8B51F2B6CA8005C4B39 /* CometTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometTests.swift; sourceTree = "<group>"; };
 		69A2B8B71F2B707C005C4B39 /* SyncTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncTest.swift; sourceTree = "<group>"; };
 		69A2B8BB1F2B7983005C4B39 /* JsonAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonAnswer.swift; path = model/JsonAnswer.swift; sourceTree = "<group>"; };
-		69A2B8BE1F2B7C73005C4B39 /* Syncronize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Syncronize.swift; path = api/Syncronize.swift; sourceTree = "<group>"; };
+		69A2B8BE1F2B7C73005C4B39 /* ManageSynchronization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManageSynchronization.swift; path = api/ManageSynchronization.swift; sourceTree = "<group>"; };
 		69A2B8C01F2B942F005C4B39 /* CometManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CometManager.swift; path = model/CometManager.swift; sourceTree = "<group>"; };
 		69A2B8C21F2B9A8F005C4B39 /* CometManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometManagerTest.swift; sourceTree = "<group>"; };
 		69FDDDEA1F2CCAB90016BE88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -204,7 +204,7 @@
 		69A2B8BD1F2B7C54005C4B39 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				69A2B8BE1F2B7C73005C4B39 /* Syncronize.swift */,
+				69A2B8BE1F2B7C73005C4B39 /* ManageSynchronization.swift */,
 				69FDDDEF1F2CF2140016BE88 /* FlickrImage.swift */,
 			);
 			name = api;
@@ -529,7 +529,7 @@
 				697B415F1F2A044F007DFF61 /* AppDelegate.swift in Sources */,
 				697B41961F2B2B8F007DFF61 /* ListOfComets.swift in Sources */,
 				69FDDDEE1F2CCDEB0016BE88 /* MapManager.swift in Sources */,
-				69A2B8BF1F2B7C73005C4B39 /* Syncronize.swift in Sources */,
+				69A2B8BF1F2B7C73005C4B39 /* ManageSynchronization.swift in Sources */,
 				69A2B8BC1F2B7983005C4B39 /* JsonAnswer.swift in Sources */,
 				69A2B8B41F2B6B12005C4B39 /* Comet.swift in Sources */,
 				697B41981F2B2BA6007DFF61 /* CometDetail.swift in Sources */,
