@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "comets/api/Syncronize.swift"
+            timestampString = "522953488.105103"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "Syncronize"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "comets.Syncronize.delegate.getter : Swift.Optional&lt;comets.SyncronizeDelegate&gt;"
+                  moduleName = "comets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattarianeclarke/Development/IOS/comets/comets/api/Syncronize.swift"
+                  timestampString = "522953492.223549"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "comets.Syncronize.delegate.setter : Swift.Optional&lt;comets.SyncronizeDelegate&gt;"
+                  moduleName = "comets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattarianeclarke/Development/IOS/comets/comets/api/Syncronize.swift"
+                  timestampString = "522953492.226498"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "comets.Syncronize.init () -&gt; comets.Syncronize"
+                  moduleName = "comets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattarianeclarke/Development/IOS/comets/comets/api/Syncronize.swift"
+                  timestampString = "522953492.22804"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
