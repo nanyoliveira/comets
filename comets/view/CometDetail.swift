@@ -27,10 +27,7 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
     
     
     @IBOutlet weak var countryImageHeight: NSLayoutConstraint!
-    
-    
-    
-    
+
     var comet:Comet?
     
     var cometCountry:String?
@@ -40,11 +37,7 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
             setCountryImage()
         }
     }
-    
-    
     let mapM = MapManager()
-    
-    
     
     override func viewDidLoad() {
         
@@ -68,9 +61,9 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
     
     private func populateView()
     {
-        mapM.setCometLocation()
+        _ = mapM.setCometLocation()
         cometName.text = comet!.name
-        cometMass.text = " \(comet!.mass)"
+        cometMass.text = " \(comet!.mass)g"
         cometYear.text = " \(comet!.cyear)"
     }
     
@@ -86,6 +79,18 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
         cometName.text = "Uh Oh!"
         countryName.text = "Chuck Norris kicked this comet away!"
         countryImage.image = UIImage(named: "chuckNorris")
+    }
+    
+    
+    private func reduceImage(){
+        countryImage.image = nil
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            [unowned self] in
+            self.countryImageHeight.constant = 10
+            self.view.layoutIfNeeded()
+            
+            },completion: nil)
     }
     
     
@@ -129,16 +134,6 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
         reduceImage()
     }
     
-    
-    private func reduceImage(){
-        countryImage.image = nil
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            [unowned self] in
-            self.countryImageHeight.constant = 10
-            self.view.layoutIfNeeded()
-            
-            },completion: nil)
-    }
+   
     
 }

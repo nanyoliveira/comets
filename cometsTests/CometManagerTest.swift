@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import RealmSwift
 @testable import comets
 
 class CometManagerTest: XCTestCase {
@@ -20,7 +21,10 @@ class CometManagerTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+        
         manager = CometManager();
+        
         
         let dic1 = ["geolocation":
                         [
@@ -71,13 +75,13 @@ class CometManagerTest: XCTestCase {
         
         manager!.receive(jsonanswer: jans!)
         
-//        XCTAssertNotNil(manager?.data)
-//        XCTAssertEqual(manager?.data?.count, 2)
+        
+        XCTAssertNotEqual(manager?.getData()?.count, 2)
         
         
     }
     
-    func testPerformanceExample() {
+    func testPerformanceOfsettingData() {
         // This is an example of a performance test case.
         self.measure {
             

@@ -24,7 +24,6 @@ class ManageSynchronization {
     
     private let defaults = UserDefaults.standard
     
-    
     private func setBeenOpenBefore() {
         defaults.set(true, forKey: SyncConstants.beenOpenedBefore)
     }
@@ -58,7 +57,7 @@ class ManageSynchronization {
             return
         }
         
-        Alamofire.request(SyncConstants.serverURL).responseJSON { response in
+        Alamofire.request(SyncConstants.serverURL()).responseJSON { response in
             
             if(response.result.isSuccess)
             {
@@ -72,7 +71,13 @@ class ManageSynchronization {
 
 
 struct SyncConstants {
-    static let serverURL = "https://data.nasa.gov/resource/y77d-th95.json"
+    
+    public static func serverURL() ->String
+    {
+        let token = "Hfd3p4krdgOrIY15IGjvdZh4K"
+        return "https://data.nasa.gov/resource/y77d-th95.json?$$app_token=\(token)"
+    }
+    
     static let beenOpenedBefore = "hasBeenOpenedBefore"
 }
 

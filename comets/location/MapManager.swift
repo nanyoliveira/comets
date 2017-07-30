@@ -12,9 +12,9 @@ import CoreLocation
 
 protocol MapManagerDelegate: class
 {
-    var map: MKMapView! { get }
-    var cometCountry: String? { get set }
-    func getCometLocation() -> (lat:String, lon:String)
+     var map: MKMapView! { get }
+     var cometCountry: String? { get set }
+     func getCometLocation() -> (lat:String, lon:String)
 }
 
 
@@ -31,20 +31,18 @@ class MapManager {
     }
     
 
-     func setCometLocation()
+    func setCometLocation() ->Bool
     {
         guard delegate != nil else
         {
           print("no delegate")
-            return
+            return false
         }
         
         cometLocation = CLLocation(latitude: validLatitude((delegate?.getCometLocation().lat)!),
                                     longitude: validLongitude((delegate?.getCometLocation().lon)!))
+        return true
     }
-    
-    
- 
     
     private func findLocation()  {
         dropPin()

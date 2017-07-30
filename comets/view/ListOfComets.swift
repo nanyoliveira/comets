@@ -19,8 +19,6 @@ class ListOfComets: UITableViewController {
         }
     }
     
-   
-    
     @IBOutlet weak var loadingMessage: UILabel!
     
     override func viewDidLoad() {
@@ -39,15 +37,12 @@ class ListOfComets: UITableViewController {
         
         
         self.clearsSelectionOnViewWillAppear = false
-        
-       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-    
     
     private func receive(notification:Notification)
     {
@@ -58,9 +53,6 @@ class ListOfComets: UITableViewController {
             self.data = cometManager.getData()
         }
     }
-
-    
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data?.count ?? 0
     }
@@ -85,8 +77,6 @@ class ListOfComets: UITableViewController {
         
     }
     
-
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == constants.detailsSegue)
         {
@@ -104,11 +94,7 @@ class ListOfComets: UITableViewController {
         }
 
     }
-    
-
 }
-
-
 
 struct constants {
     static let cellIdentifier = "Cell"

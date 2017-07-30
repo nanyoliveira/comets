@@ -21,7 +21,7 @@ class CometTableViewCell: UITableViewCell {
     
     func setData (comet:Comet) {
         cometName.text = comet.name
-        cometMass.text = " \(comet.mass)"
+        cometMass.text = " \(comet.mass)g"
         cometYear.text = " \(comet.cyear)"
         
     }

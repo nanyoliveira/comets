@@ -7,29 +7,58 @@
 //
 
 import XCTest
+import MapKit
+@testable import comets
 
-class MapTest: XCTestCase {
+class MapTest: XCTestCase, MapManagerDelegate {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var ex:XCTestExpectation?
+    var map: MKMapView!
+    {
+        get {
+            return MKMapView()
+        }
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    var cometCountry: String?
+    {
+        didSet{
+            ex?.fulfill()
         }
     }
     
+    
+    func getCometLocation() -> (lat:String, lon:String)
+    {
+        return ("53.3593274", "-6.2787061")
+    }
+    
+    
+    func testSetLocation() {
+       let manager = MapManager()
+        XCTAssertFalse(manager.setCometLocation())
+    }
+    
+    func testWithDelegate(){
+        let manager = MapManager()
+        manager.delegate = self
+        
+        XCTAssertTrue(manager.setCometLocation())
+        
+        
+        ex = expectation(description: "set Country")
+        waitForExpectations(timeout: 10) { [weak self] (error) in
+            
+            XCTAssertNotNil(self?.cometCountry!)
+            XCTAssertEqual(self?.cometCountry!, "Ireland")
+            
+            
+        }
+        
+    }
+    
+
+    
 }
+
+
+

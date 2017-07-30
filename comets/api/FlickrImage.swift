@@ -17,8 +17,6 @@ protocol FlickrDelegate: class
     func noInternet()
 }
 
-
-
 class FlickrImage {
     
     weak var delegate:FlickrDelegate?
