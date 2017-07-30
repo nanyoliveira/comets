@@ -20,7 +20,7 @@ protocol SynchronizeDelegate: class
 class ManageSynchronization {
     
     
-    weak var delegate:SynchronizeDelegate?
+    var delegate:SynchronizeDelegate?
     
     private let defaults = UserDefaults.standard
     

@@ -12,18 +12,14 @@ import CoreLocation
 
 protocol MapManagerDelegate: class
 {
-    
     var map: MKMapView! { get }
     var cometCountry: String? { get set }
-    
     func getCometLocation() -> (lat:String, lon:String)
-
 }
 
 
 
 class MapManager {
-
     
     var delegate:MapManagerDelegate?
     private var cometLocation:CLLocation?
@@ -43,7 +39,6 @@ class MapManager {
             return
         }
         
-        
         cometLocation = CLLocation(latitude: validLatitude((delegate?.getCometLocation().lat)!),
                                     longitude: validLongitude((delegate?.getCometLocation().lon)!))
     }
@@ -52,18 +47,16 @@ class MapManager {
  
     
     private func findLocation()  {
-        
         dropPin()
-        
-        
         if ConnectionManager.sharedInstance.hasConnection()
         {
             findCountry()
         }
+        else{
+            self.delegate?.cometCountry = ""
+        }
     }
-    
-    
-    
+
     private func findCountry ()
     {
         let geoCoder = CLGeocoder()
@@ -79,8 +72,6 @@ class MapManager {
             var placeMark: CLPlacemark!
             placeMark = placeArray?[0]
             
-            
-            
             if let foundCountry = placeMark.addressDictionary?["Country"] as? String
             {
                 self.delegate?.cometCountry = foundCountry
@@ -95,7 +86,6 @@ class MapManager {
         let cometPin = MKPointAnnotation()
         cometPin.coordinate = cometLocation!.coordinate
         delegate?.map.addAnnotation(cometPin)
-        
         
         //show pin area
         delegate?.map.setCenter(cometLocation!.coordinate, animated: true)
@@ -115,14 +105,6 @@ class MapManager {
 }
 
 
-
-struct mapConstants {
-    static let mapRadios:CLLocationDistance = 2000
-    static let maxLatitude = 90.0
-    static let minLatitude = -90.0
-    static let maxLongitude = 180
-    static let minLongitude = -180
-}
 
 
 

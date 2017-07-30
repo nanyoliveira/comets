@@ -30,13 +30,7 @@ class ConnectionManager {
         default:
             return true
         }
-        
-        
     }
-    
-    
-    
-    
     
     func updateDisplayOffline()
     {

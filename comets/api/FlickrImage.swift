@@ -23,8 +23,6 @@ class FlickrImage {
     
     weak var delegate:FlickrDelegate?
     
-    
-    
     func researchRandonImage(countryToSearch:String) {
         
         guard ConnectionManager.sharedInstance.hasConnection() else {
@@ -56,7 +54,6 @@ class FlickrImage {
             }
         }
     }
-    
     
 }
 

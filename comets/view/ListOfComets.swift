@@ -31,7 +31,6 @@ class ListOfComets: UITableViewController {
         
          NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: CometManagerConstant.dataReady), object: nil, queue: nil, using: self.receive)
         
-        
         ConnectionManager.sharedInstance.display = self.loadingMessage
         
         let sync = ManageSynchronization();

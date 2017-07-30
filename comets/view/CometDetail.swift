@@ -12,13 +12,22 @@ import Kingfisher
 
 
 class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
-    
+    /*
+     >test what I didn't
+ */
     
     
     @IBOutlet weak var cometName: UILabel!
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var countryImage: UIImageView!
     @IBOutlet weak var map: MKMapView!
+
+    @IBOutlet weak var cometMass: UILabel!
+    @IBOutlet weak var cometYear: UILabel!
+    
+    
+    @IBOutlet weak var countryImageHeight: NSLayoutConstraint!
+    
     
     
     
@@ -61,6 +70,8 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
     {
         mapM.setCometLocation()
         cometName.text = comet!.name
+        cometMass.text = " \(comet!.mass)"
+        cometYear.text = " \(comet!.cyear)"
     }
     
     private func setCountryImage()
@@ -104,18 +115,30 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
             {
                 
                 let imageURL = URL(string: imageURLString)
-        
                 countryImage.kf.setImage(with: imageURL)
             }
         }
     }
     
     func noImageAvailable() {
-        
+        reduceImage()
     }
     
     func noInternet() {
         countryName.text = "it fell around the planet Earth"
+        reduceImage()
+    }
+    
+    
+    private func reduceImage(){
+        countryImage.image = nil
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            [unowned self] in
+            self.countryImageHeight.constant = 10
+            self.view.layoutIfNeeded()
+            
+            },completion: nil)
     }
     
 }

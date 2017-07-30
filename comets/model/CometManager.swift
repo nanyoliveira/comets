@@ -25,12 +25,14 @@ class CometManager: SynchronizeDelegate {
         
         if let receivedData = jsonanswer.result as? Array<Dictionary<String, Any>>
         {
+           
             self.data = receivedData
             convertData()
         }
     }
     
     private func convertData() {
+        
         for cometSpecifics in data!
         {
             let comet:Comet? = Comet().createFrom(dic: cometSpecifics)
