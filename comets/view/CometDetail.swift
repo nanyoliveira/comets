@@ -36,7 +36,7 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
     var cometCountry:String?
     {
         didSet{
-            countryName.text = "it fell around \(cometCountry ?? "" )"
+            countryName.text = "It fell around \(cometCountry ?? "" )"
             setCountryImage()
         }
     }
@@ -125,7 +125,7 @@ class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
     }
     
     func noInternet() {
-        countryName.text = "it fell around the planet Earth"
+        countryName.text = "It fell around the planet Earth"
         reduceImage()
     }
     
