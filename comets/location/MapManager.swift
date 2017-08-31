@@ -21,7 +21,7 @@ protocol MapManagerDelegate: class
 
 class MapManager {
     
-    var delegate:MapManagerDelegate?
+    weak var delegate:MapManagerDelegate?
     private var cometLocation:CLLocation?
     {
         didSet

@@ -17,7 +17,7 @@ class ConnectionManager {
     }()
     
     
-    weak var display:UILabel?
+   
     
     
     func hasConnection() ->Bool
@@ -32,13 +32,6 @@ class ConnectionManager {
         }
     }
     
-    func updateDisplayOffline()
-    {
-        if(display != nil)
-        {
-            display!.text = "Connection is necessary to gather the first data"
-        }
-    }
 }
 
 

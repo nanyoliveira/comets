@@ -10,6 +10,8 @@ import Foundation
 import RealmSwift
 
 class CometManager: SynchronizeDelegate {
+  
+
     
     private var data:Array<Dictionary<String, Any>>?
     private var realm:Realm
@@ -72,7 +74,11 @@ class CometManager: SynchronizeDelegate {
         return false
     }
     
-    
+    func checkConnection() {
+        let notification = Notification(name: Notification.Name(rawValue: CometManagerConstant.noIternet))
+        
+        NotificationCenter.default.post(notification)
+    }
     
     
     func dataSet()
@@ -104,6 +110,7 @@ class CometManager: SynchronizeDelegate {
 
 struct CometManagerConstant {
     static let dataReady = "DataReady"
+    static let noIternet = "NoInternet"
 }
 
 

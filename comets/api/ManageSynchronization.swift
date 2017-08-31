@@ -13,6 +13,7 @@ protocol SynchronizeDelegate: class
 {
     func receive(jsonanswer:JsonAnswer)
     func dataSet()
+    func checkConnection()
     
 }
 
@@ -20,7 +21,7 @@ protocol SynchronizeDelegate: class
 class ManageSynchronization {
     
     
-    var delegate:SynchronizeDelegate?
+    weak var delegate:SynchronizeDelegate?
     
     private let defaults = UserDefaults.standard
     
@@ -52,7 +53,7 @@ class ManageSynchronization {
     func call()
     {
         guard ConnectionManager.sharedInstance.hasConnection() else {
-            ConnectionManager.sharedInstance.updateDisplayOffline()
+            self.delegate?.checkConnection()
             setBeenOpenBeforeFalse()
             return
         }

@@ -29,7 +29,9 @@ class ListOfComets: UITableViewController {
         
          NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: CometManagerConstant.dataReady), object: nil, queue: nil, using: self.receive)
         
-        ConnectionManager.sharedInstance.display = self.loadingMessage
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: CometManagerConstant.noIternet), object: nil, queue: nil, using: self.receive)
+        
         
         let sync = ManageSynchronization();
         sync.delegate = cometManager
@@ -43,6 +45,14 @@ class ListOfComets: UITableViewController {
         super.didReceiveMemoryWarning()
         
     }
+    
+    
+    func updateDisplayOffline()
+     {
+        loadingMessage.text = "Connection is necessary to gather the first data"
+     }
+ 
+    
     
     private func receive(notification:Notification)
     {

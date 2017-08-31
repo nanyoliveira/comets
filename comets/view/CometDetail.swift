@@ -12,10 +12,7 @@ import Kingfisher
 
 
 class CometDetail: UIViewController, MapManagerDelegate, FlickrDelegate {
-    /*
-     >test what I didn't
- */
-    
+ 
     
     @IBOutlet weak var cometName: UILabel!
     @IBOutlet weak var countryName: UILabel!
